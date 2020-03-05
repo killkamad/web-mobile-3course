@@ -1,0 +1,36 @@
+body{
+  background: #41ce5d;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
+  background: #ba091e;
+}
+
+.card{
+  border: 1px solid #cecece;
+  background: #EEE;
+  padding: 1em;
+  border-radius: 0.3em;
+  box-shadow: 1px 1px 0.3em #BABABA;
+}
+
+.title{
+  text-align: center;
+  font-weight: bold;
+  color: #636363;
+}
+
+.description{
+  text-align: justify;
+}
+
+.secondary{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #696969;
+}
