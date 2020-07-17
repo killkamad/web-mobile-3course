@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {
-    ActivityIndicator,
-    RefreshControl,
     ScrollView,
-    Text,
     StyleSheet,
     View
 } from 'react-native';

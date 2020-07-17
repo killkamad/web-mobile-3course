@@ -8,7 +8,7 @@ export const apiMiddleware = store => next => action => {
     switch (action.type) {
         case 'GET_MOVIE_DATA':
             store.dispatch({ type: 'GET_MOVIE_DATA_LOADING' })
-            fetch(`${API}/movies`)
+            fetch(`${API}/movies`, { mode: 'no-cors'})
                 .then(response => response.json())
                 .then(data => next({
                     type: 'GET_MOVIE_DATA_RECEIVED',

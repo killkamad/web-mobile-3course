@@ -16,6 +16,19 @@ const index = (req, res, next) => {
             }))
         }
     ))
-}
+};
+
+const index_id = (req, res) => {
+    // lean makes search faster
+    Movie.findById().lean().exec((err, movies) => res.json(
+        {
+            movies: movies.map(movie => ({
+                ...movie,
+                days,
+                times
+            }))
+        }
+    ))
+};
 
 module.exports = index;

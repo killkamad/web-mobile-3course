@@ -5,23 +5,27 @@ import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Movies from './src/screens/Movies';
 import Confirmation from './src/screens/Confirmation';
-
+import { Router, Scene } from 'react-native-router-flux'
 import AppContainer from './src/Navigation/navigation'
 
 
+import { apiMiddleware, reducer } from './src/redux'
+import { applyMiddleware, createStore } from 'redux'
 
-const Stack = createStackNavigator();
+import {Provider} from "react-redux";
+const store = createStore(reducer, {}, applyMiddleware(apiMiddleware));
 
 
-import { Router, Scene } from 'react-native-router-flux'
-import { Platform } from 'react-native'
+store.dispatch({type: 'GET_MOVIE_DATA'});
+
+
 
 export default class App extends React.Component {
     render() {
         return (
             <Router>
                 <Scene key="root" hideNavBar>
-                    <Scene key='Movies' component={Movies} title='Лучшие фильмы' hideNavBar={false} />
+                    <Scene key='Movies' component={Movies} title='Фильмы' hideNavBar={false} />
                     <Scene key='Confirmation' component={Confirmation} title='Код подтвержден' hideNavBar={false} />
                 </Scene>
             </Router>

@@ -14,7 +14,7 @@ export const movies = [
     },
     {
         title: 'Paterson',
-        poster: 'https://www.awardscircuit.com/wp-content/uploads/2016/08/la-la-land-poster.jpg',
+        poster: 'https://st.kp.yandex.net/im/poster/2/8/6/kinopoisk.ru-Paterson-2864757.jpg',
         genre: 'Drama/Comedy',
         days,
         times,
